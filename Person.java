@@ -30,4 +30,8 @@ class Person {
 	public Person getPrevPerson(){
 		return this.prevPerson;
 	}
+
+	public Person setPrevPerson(Person prs){
+		this.prevPerson = prs;
+	}
 }
