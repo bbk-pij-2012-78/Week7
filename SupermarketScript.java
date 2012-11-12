@@ -6,13 +6,22 @@ public class SupermarketScript {
     }
 
     public void launch() {
-		PersonQueue sup = new Supermarket();
-		Person person = new Person();
-		person.name = "Nick Sutton";
-		person.age = 34;
+		Supermarket sup = new Supermarket();
+		sup.addPerson(new Person(34, "Nick Sutton"));
+		sup.addPerson(new Person(35, "John"));
+		sup.addPerson(new Person(36, "Dave"));
+		sup.addPerson(new Person(37, "Tim"));
+		sup.addPerson(new Person(38, "Steve"));
+		sup.addPerson(new Person(39, "Rob"));
 
-		sup.addPerson(person);
-		System.out.println(sup.getSize());
+		System.out.println("Queue Size: " + sup.getQueueSize());
+
+		Person prs = null;
+		while (sup.getQueueSize() > 0){
+			prs = sup.servePerson();
+			System.out.println("Person Served: " + prs.personName());
+			System.out.println("Queue Size: " + sup.getQueueSize());
+		}
     }
 
 }
